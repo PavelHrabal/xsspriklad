@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+</head>
+<body>
+  <h1 id="welcome">Welcome</h1>
+
+  <script>
+    // Zranitelný kód – přímo zapisuje vstup z URL do DOMu
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get("user");
+    document.getElementById("welcome").innerHTML = "Welcome " + username;
+  </script>
+</body>
+</html>
