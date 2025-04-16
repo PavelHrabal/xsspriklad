@@ -1,1 +1,4 @@
 
+// Tento soubor simuluje malware nebo payload
+// V praxi by šlo třeba o spustitelný nebo skriptovací soubor
+Hello, you've downloaded a file via XSS! :)
