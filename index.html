@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome</title>
+  <title>XSS Demo</title>
 </head>
 <body>
-  <h1 id="welcome">Welcome</h1>
+  <h1 id="welcome">Welcome!</h1>
 
   <script>
-    // Zranitelný JavaScript
+    // Vezme parametr ?user= a zobrazí ho ve stránce (zranitelné!)
     const params = new URLSearchParams(window.location.search);
     const username = params.get("user");
-    document.getElementById("welcome").innerHTML = "Welcome " + username;
+    document.getElementById("welcome").innerHTML = "Welcome, " + username;
   </script>
 </body>
 </html>
