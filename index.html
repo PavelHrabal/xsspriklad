@@ -2,16 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome Page</title>
+  <title>Welcome</title>
 </head>
 <body>
   <h1 id="welcome">Welcome</h1>
+  <p id="tokenDisplay"></p>
 
   <script>
-    // Zranitelný kód – přímo zapisuje vstup z URL do DOMu
+    // Simulace "session tokenu"
+    localStorage.setItem("sessionToken", "abc123-super-secret-token");
+
+    // Získání jména z URL parametru
     const params = new URLSearchParams(window.location.search);
     const username = params.get("user");
-    document.getElementById("welcome").innerHTML = "Welcome " + username;
+
+    // Zranitelné: zapisuje přímo do DOM pomocí innerHTML
+    document.getElementById("welcome").innerHTML = "Welcome, " + username;
+
+    // Ukázka zobrazení tokenu (normálně by byl skrytý)
+    document.getElementById("tokenDisplay").innerText = "Session token: " + localStorage.getItem("sessionToken");
   </script>
 </body>
 </html>
+
