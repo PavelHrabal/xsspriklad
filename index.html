@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>XSS Demo</title>
+  <title>XSS Příklad</title>
 </head>
 <body>
-  <h1 id="welcome">Welcome!</h1>
+  <h1>Vítej!</h1>
 
   <script>
-    // Vezme parametr ?user= a zobrazí ho ve stránce (zranitelné!)
     const params = new URLSearchParams(window.location.search);
-    const username = params.get("user");
-    document.getElementById("welcome").innerHTML = "Welcome, " + username;
+    const payload = params.get("user");
+
+    if (payload) {
+      // ❗️Nebezpečné — ukázka DOM-Based XSS
+      eval(payload);
+    }
   </script>
 </body>
 </html>
